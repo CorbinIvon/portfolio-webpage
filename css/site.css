@@ -102,6 +102,7 @@ html {
 }
 .socials img {
   background-color: white;
+  border-radius: 50%;
 }
 /* ========== */
 /*  NEW-POST  */
