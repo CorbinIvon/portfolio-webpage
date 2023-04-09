@@ -9,6 +9,9 @@
       <a class="link-button" href="about.php">About</a>
       <a class="link-button" href="contact.php">Contact</a>
     </div>
-    <a class="link-button float-top-right-corner" href="/new-post.php">New Post</a>
+    <!-- Only show the next line if the port is 8080 -->
+    <?php if ($_SERVER['SERVER_PORT'] == 8080) { ?>
+      <a class="link-button float-top-right-corner" href="/new-post.php">New Post</a>
+    <?php } ?>
   </div>
 </div>
