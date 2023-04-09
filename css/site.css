@@ -124,6 +124,15 @@ html {
   font-size: 14px;
   padding: 10px;
 }
+code {
+  background-color: #333;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  padding: 4px 8px;
+  color: #fff;
+}
 .full-width {
   width: 100%;
 }

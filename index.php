@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
       <?php include_once 'header.php'; ?>
       <div id="content">
         <div id="recent-posts">
-          <h2>Projects</h2>
+          <h1>Projects</h1>
           <?php
           foreach ($posts as $post){
             $title = $post['title'];
