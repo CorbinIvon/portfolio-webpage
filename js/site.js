@@ -34,3 +34,32 @@ textarea_PostArea.addEventListener("input", () => {
   textarea_PostArea.style.height = "auto";
   textarea_PostArea.style.height = `${textarea_PostArea.scrollHeight}px`;
 });
+
+
+const carousel_images = document.querySelectorAll('.carousel-image');
+let currentIndex = 0;
+if (carousel_images.length > 0){
+  function showImage(index) {
+    carousel_images[currentIndex].classList.remove('active');
+    carousel_images[index].classList.add('active');
+    currentIndex = index;
+    // // get the carousel element and the images
+    // const carousel = document.querySelector('.carousel');
+    // const images = document.querySelectorAll('.carousel-image');
+
+    // // calculate the aspect ratio of the first image
+    // const aspectRatio = images[index].naturalWidth / images[index].naturalHeight;
+
+    // // set the height of the carousel based on the aspect ratio
+    // carousel.style.height = `${carousel.offsetWidth / aspectRatio}px`;
+  }
+  document.querySelector('.carousel-arrow.previous').addEventListener('click', () => {
+    const index = currentIndex === 0 ? carousel_images.length - 1 : currentIndex - 1;
+    showImage(index);
+  });
+  document.querySelector('.carousel-arrow.next').addEventListener('click', () => {
+    const index = currentIndex === carousel_images.length - 1 ? 0 : currentIndex + 1;
+    showImage(index);
+  });
+  showImage(0);
+}

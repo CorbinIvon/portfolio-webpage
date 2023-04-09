@@ -182,3 +182,53 @@ blockquote {
   color: #666;
   quotes: "\201C""\201D""\2018""\2019";
 }
+/* ========== */
+/*   CAROUSEL  */
+/* ========== */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-image.active {
+  opacity: 1;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-arrow:hover {
+  opacity: 0.7;
+}
+
+.carousel-arrow.previous {
+  left: 20px;
+}
+
+.carousel-arrow.next {
+  right: 20px;
+}

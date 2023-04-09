@@ -30,6 +30,6 @@ include_once 'new-post-handle-upload.php';
       <br>
       <?php include_once "footer.php";?>
     </div>
-    <script src='js/new-post.js'></script>
+    <script src='js/site.js'></script>
   </body>
 </html>

@@ -69,7 +69,7 @@ if ($result->num_rows > 0) {
         <button type="button" id="edit-button">Edit Post</button>
         <br>
         <br>
-        <script src='js/new-post.js'></script>
+        <script src='js/site.js'></script>
       <?php } ?>
       <?php include_once "footer.php" ?>
     </div>
