@@ -63,3 +63,33 @@ if (carousel_images.length > 0){
   });
   showImage(0);
 }
+
+const gallery = document.querySelector('.gallery');
+const items = document.querySelectorAll('.gallery-item');
+const overlay = document.createElement('div');
+overlay.classList.add('overlay');
+
+items.forEach(item => {
+  const img = item.querySelector('img');
+  const heading = item.querySelector('h3').textContent;
+  const paragraph = item.querySelector('p').textContent;
+  item.addEventListener('click', () => {
+    overlay.innerHTML = `
+      <div class="modal-content">
+        <img src="${img.src}" alt="${img.alt}">
+        <div class="modal-text">
+          <h3>${heading}</h3>
+          <p>${paragraph}</p>
+        </div>
+      </div>
+    `;
+    gallery.appendChild(overlay);
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+overlay.addEventListener('click', () => {
+  overlay.innerHTML = '';
+  gallery.removeChild(overlay);
+  document.body.style.overflow = '';
+});

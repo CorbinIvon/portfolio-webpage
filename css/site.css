@@ -183,16 +183,14 @@ blockquote {
   quotes: "\201C""\201D""\2018""\2019";
 }
 /* ========== */
-/*   CAROUSEL  */
+/*  CAROUSEL  */
 /* ========== */
-
 .carousel {
   position: relative;
   width: 100%;
   height: 400px;
   overflow: hidden;
 }
-
 .carousel-image {
   position: absolute;
   top: 0;
@@ -202,11 +200,9 @@ blockquote {
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
-
 .carousel-image.active {
   opacity: 1;
 }
-
 .carousel-arrow {
   position: absolute;
   top: 50%;
@@ -220,15 +216,105 @@ blockquote {
   cursor: pointer;
   transition: opacity 0.3s ease-in-out;
 }
-
 .carousel-arrow:hover {
   opacity: 0.7;
 }
-
 .carousel-arrow.previous {
   left: 20px;
 }
-
 .carousel-arrow.next {
   right: 20px;
+}
+/* ========== */
+/*  GALLERY   */
+/* ========== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+.gallery-item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+}
+.gallery-item img {
+  display: block;
+  max-width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+.gallery-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+.gallery-item .overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.gallery-item:hover .overlay-content {
+  opacity: 1;
+}
+/* ========== */
+/*  OVERLAY   */
+/* ========== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 900px;
+  width: 90%;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+}
+.modal-text {
+  background: linear-gradient(to bottom right, white, var(--filler-color));
+}
+.modal-text-container {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.modal-text h3 {
+  font-size: 1.5rem;
+  margin: 10px;
+}
+.modal-text p {
+  font-size: 1rem;
 }
