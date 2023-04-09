@@ -69,8 +69,8 @@ if ($result->num_rows > 0) {
         <button type="button" id="edit-button">Edit Post</button>
         <br>
         <br>
-        <script src='js/site.js'></script>
-      <?php } ?>
+        <?php } ?>
+      <script src='js/site.js'></script>
       <?php include_once "footer.php" ?>
     </div>
   </body>
