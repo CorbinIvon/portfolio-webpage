@@ -1,28 +1,36 @@
-// Data Preview Handler.
-const previewButton = document.getElementById("preview-button");
-const editPreviewButton = document.getElementById("edit-preview-button");
-const textareaHandler = document.getElementById("textarea-handler");
-const previewMarkdownArea = document.getElementById("markdown-preview");
-const previewMarkdownData = document.getElementById("preview-markdown-data");
-previewButton.addEventListener("click", () => {
-    previewButton.style.display = "none";
-    editPreviewButton.style.display = "block";
+// New Code to fix #1
+const edit_Button = document.getElementById("edit-button");
+const preview_Button = document.getElementById("preview-button");
+const textarea_PostArea = document.getElementById("textarea-post-area");
+const preview_PostArea = document.getElementById("preview-post-area");
+const submit_togglable = document.getElementById("login-togglable");
 
-    textareaHandler.style.display = "none";
-    previewMarkdownArea.style.display = "block";
-    
-    previewMarkdownData.innerHTML = textareaHandler.value;
-});
-  editPreviewButton.addEventListener("click", () => {
-    previewButton.style.display = "block";
-    editPreviewButton.style.display = "none";
+edit_Button.addEventListener("click", () => {
+  if (submit_togglable != null)
+    submit_togglable.style.display = "block";
+  textarea_PostArea.value = preview_PostArea.innerHTML;
 
-    textareaHandler.style.display = "block";
-    previewMarkdownArea.style.display = "none";
+  preview_PostArea.style.display = "none";
+  textarea_PostArea.style.display = "block";
+
+  preview_Button.style.display = "block";
+  edit_Button.style.display = "none";
+
+  textarea_PostArea.style.height = "auto";
+  textarea_PostArea.style.height = `${textarea_PostArea.scrollHeight}px`;
 });
-// textarea handler
-const textarea = document.getElementById("textarea-handler");
-textarea.addEventListener("input", () => {
-    textarea.style.height = "auto";
-    textarea.style.height = `${textarea.scrollHeight}px`;
+preview_Button.addEventListener("click", () => {
+  if (submit_togglable != null)
+    submit_togglable.style.display = "none";
+  preview_PostArea.innerHTML = textarea_PostArea.value;
+
+  preview_PostArea.style.display = "block";
+  textarea_PostArea.style.display = "none";
+
+  preview_Button.style.display = "none";
+  edit_Button.style.display = "block";
+});
+textarea_PostArea.addEventListener("input", () => {
+  textarea_PostArea.style.height = "auto";
+  textarea_PostArea.style.height = `${textarea_PostArea.scrollHeight}px`;
 });

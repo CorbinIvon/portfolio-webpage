@@ -21,15 +21,11 @@ include_once 'new-post-handle-upload.php';
         </div>
         <br>
         <button type="button" id="preview-button" >Preview Post</button>
-        <button type="button" id="edit-preview-button" style="display: None">Edit Post</button>
+        <button type="button" id="edit-button" style="display: None">Edit Post</button>
         <hr>
         <!-- Will use the markdown language to create posts -->
-        <textarea class="textarea-handler" id="textarea-handler" rows="1" name="text-area-content" placeholder="New Post - HTML"></textarea>
-        <div id="markdown-preview" style="display: none">
-          <div id="preview-markdown-data"></div>
-        </div>
-        <div id="file-uploads">
-        </div>
+        <textarea class="textarea-handler" id="textarea-post-area" name="text-area-content" placeholder="New Post - HTML"></textarea>
+        <div id="preview-post-area"></div>
       </form>
       <br>
       <?php include_once "footer.php";?>
