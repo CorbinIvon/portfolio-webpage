@@ -6,7 +6,8 @@ CREATE TABLE IF NOT EXISTS `portfolio`.`posts` (
     `content` TEXT NULL,
     `date` DATE DEFAULT CURRENT_TIMESTAMP,
     -- Will always be "Me". I don't plan on having collaborators post as well.
-    `author` VARCHAR(45) NULL);
+    `author` VARCHAR(45) NULL,
+    `hidden` TINYINT(1) DEFAULT 0);
 CREATE TABLE IF NOT EXISTS `portfolio`.`tags` (
     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `tag` VARCHAR(45) NULL);

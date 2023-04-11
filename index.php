@@ -1,6 +1,7 @@
 <?php
 include_once 'mysql.php';
-$sql = "SELECT * FROM posts ORDER BY date DESC;";
+$dev_sql = ($_SERVER['SERVER_PORT'] != 8080 ? 'WHERE hidden = 0' : '');
+$sql = "SELECT * FROM posts ".$dev_sql." ORDER BY date DESC;";
 $result = $mysql->query($sql);
 if ($result === FALSE) {
   die("<html><head><title>Post Not Found</title></head><body><p>Posts Not Found</p></body></html>");
