@@ -183,6 +183,15 @@ blockquote {
   color: #666;
   quotes: "\201C""\201D""\2018""\2019";
 }
+.circle {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: green;
+  margin: 0 5px;
+  vertical-align: middle;
+}
 /* ========== */
 /*  CAROUSEL  */
 /* ========== */

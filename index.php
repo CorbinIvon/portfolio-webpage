@@ -30,13 +30,18 @@ if ($result->num_rows > 0) {
         <div id="recent-posts">
           <h1>Projects</h1>
           <?php
+          $port_8080 = false;
+          if ($_SERVER['SERVER_PORT'] == 8080)
+            $port_8080 = true;
+          
           foreach ($posts as $post){
             $title = $post['title'];
             $date = $post['date'];
             $id = $post['id'];
             echo "<a class='post link-button' href='post.php?id=" . $id . "'>";
             echo "<h1>" . $title . "</h1>";
-            echo "<p>" . $date . "</p>";
+            
+            echo "<p>". ($port_8080?"<span class='circle' style='background-color: ".($post['hidden']?'red':'green').";'></span>":'') . $date . "</p>";
             echo "</a>";
           }
           ?>
