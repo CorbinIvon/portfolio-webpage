@@ -9,9 +9,9 @@ if (isset($_POST['username']) || isset($_POST['password'])){
   }
   $id = $_GET['id'];
   $content = mysqli_real_escape_string($mysql, $_POST['text-area-content']); // Not a real secure way to scrub the user input.
-  $sql = "UPDATE posts SET content = '" . $content . "' WHERE id = " . $id . ";";
+  $sql = "UPDATE posts SET content = '" . $content . "', hidden = ". (isset($_POST['publish'])?'0':'1') ." WHERE id = " . $id . ";";
   if ($mysql->query($sql) === TRUE) {
-    echo "Post Successfully Updated.";
+    $post_success = "Post Successfully Updated.";
   } else {
     echo "Error: ".$mysql->error;
     echo "<br>sql: ";
@@ -34,6 +34,9 @@ if ($result->num_rows > 0) {
   $content = $row['content'];
   $author = $row['author'];
   $date = $row['date'];
+  $publish = $row['hidden'] ? false : true;
+  if ($_SERVER['SERVER_PORT'] == 8080)
+    $post_indicator = "<span class='circle' style='background-color: ".($publish?'green':'red')."'></span>";
 } else {
   die("<html><head><title>Post Not Found</title></head><body><p>Post Not Found</p>Exit Code: 2</body></html>");
 }
@@ -51,7 +54,7 @@ if ($result->num_rows > 0) {
       <?php include_once "header.php" ?>
       <div class="compact">
         <h1><?php echo $title; ?></h1>
-        <p><?php echo $date; ?></p>
+        <p><?php echo $post_indicator.$date; ?></p>
         <p><?php echo $author; ?></p>
       </div>
       <div id="preview-post-area"><?php echo $content; ?></div>
@@ -61,12 +64,19 @@ if ($result->num_rows > 0) {
           <br>
           <button type="button" id="preview-button" style="display: None">Preview Post</button>
           <br>
+          <label for="publish">Publish Post</label>
+          <input type="checkbox" name="publish" id="publish" <?php echo ($publish?'checked':'');?>>
+          <br>
           <input type="text" name="username" placeholder="Username">
           <input type="password" name="password" placeholder="password">
           <input type="submit" value="Submit">
           <br>
         </form>
         <button type="button" id="edit-button">Edit Post</button>
+        <?php
+        if (isset($post_success))
+          echo $post_success;
+        ?>
         <br>
         <br>
         <?php } ?>
