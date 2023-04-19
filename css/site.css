@@ -124,23 +124,23 @@ html {
   box-shadow: none;
   width: 100%;
 }
-.code-block {
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 14px;
-  padding: 10px;
-}
 code {
   background-color: #333;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: inline-block;
   font-family: "Courier New", Courier, monospace;
   font-size: 14px;
-  padding: 4px 8px;
+  line-height: 1.6;
+  margin: 0.2em 0;
+  overflow-x: auto;
+  padding: 8px 12px;
   color: #fff;
+  white-space: pre;
+  word-wrap: normal;
 }
+
 .full-width {
   width: 100%;
 }
