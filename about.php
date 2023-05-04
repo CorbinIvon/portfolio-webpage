@@ -32,6 +32,10 @@
     </p>
     
     <hr>
+    <h2>Certificates</h2>
+    <a href="certs/Google-Technical-Support-Fundamentals.pdf" target="_blank">Google: Technical Support Fundamentals</a><br>
+    <a href="certs/Google-The-Bits-And-Bytes-Of-Computer-Networking.pdf" target="_blank">Google: The Bits And Bytes Of Computer Networking</a>
+    <hr>
     <h2>Skills</h2>
     <p>
       Teaching, Leadership, Communication, Teamwork, Problem Solving, Time Management, Organization, Adaptability, Creativity, Critical Thinking, Self Motivation, dedication
